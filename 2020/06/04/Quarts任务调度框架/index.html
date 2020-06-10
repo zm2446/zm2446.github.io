@@ -430,8 +430,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/quarts/">
-                                <span class="chip bg-color">quarts</span>
+                            <a href="/tags/%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1%E6%A1%86%E6%9E%B6/">
+                                <span class="chip bg-color">定时任务框架</span>
                             </a>
                         
                     </div>
@@ -462,7 +462,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Quarts：任务定时调度框架</p>
+                <h3 id="定时任务使用："><a href="#定时任务使用：" class="headerlink" title="定时任务使用："></a>定时任务使用：</h3><p>quarts任务调度框架</p>
 <p>是一个完全由java编写的开源任务调度框架，通过触发器设置作业定时运行规则，控制作业的运行时间。</p>
 <p>spring整合quarts任务定时调度框架</p>
 <ol>
@@ -475,13 +475,16 @@
 
 
 
-
-
-
-
 </li>
 </ol>
+<p><strong>Schedul定时任务：</strong></p>
+<p>​    1.在启动类上加@EnableScheduling注解开启定时任务。</p>
+<p>​    2.在类上加注解@Scheduled()注解。</p>
+<p>​    3.在注解的括号内加的有fixedRate=2000代表固定频率执行任务。</p>
+<p>​    4.在括号内加的是fixdeplay=2000代表固定延迟执行定时任务。</p>
+<p>​    5.如果使用的是定时任务测试，使用复杂的任务执行要求可以使用cron表达式。</p>
 <p><strong>Quartz Cron</strong> <strong>表达式支持到七个域</strong> </p>
+<p>表达式生成网址：<a href="http://cron.qqe2.com/" target="_blank" rel="noopener">http://cron.qqe2.com/</a></p>
 <table>
 <thead>
 <tr>
@@ -597,8 +600,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/quarts/">
-                                    <span class="chip bg-color">quarts</span>
+                                <a href="/tags/%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1%E6%A1%86%E6%9E%B6/">
+                                    <span class="chip bg-color">定时任务框架</span>
                                 </a>
                             
                         </div>
