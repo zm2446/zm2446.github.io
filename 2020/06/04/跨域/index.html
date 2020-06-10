@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, Hexo">
+    <meta name="keywords" content="跨域, Hexo">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | Hexo</title>
+    <title>跨域 | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -308,12 +308,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">跨域</h1>
                 </div>
             </div>
         </div>
@@ -428,9 +428,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E8%B7%A8%E5%9F%9F/">
+                                <span class="chip bg-color">跨域</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -442,7 +446,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-06-10
+                    2020-06-04
                 </div>
                 
 
@@ -458,19 +462,59 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+                <h3 id="什么是跨域"><a href="#什么是跨域" class="headerlink" title="什么是跨域"></a>什么是跨域</h3><p>​    指的是跨域名访问</p>
+<p>​    以下情况属于跨域</p>
+<table>
+<thead>
+<tr>
+<th>跨域原因</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>域名不同</td>
+<td>```<a href="http://www.jd.com`" target="_blank" rel="noopener">www.jd.com`</a> 与 `<a href="http://www.taobao.com``" target="_blank" rel="noopener">www.taobao.com``</a></td>
+</tr>
+<tr>
+<td>域名相同，端口不同</td>
+<td><code>www.jd.com:8080` 与 `www.jd.com:8081</code></td>
+</tr>
+<tr>
+<td>二级域名不同</td>
+<td><code>item.jd.com` 与 `miaosha.jd.com</code></td>
+</tr>
+</tbody></table>
+<p>为什么有跨域</p>
+<p>跨域不一定会有跨域问题</p>
+<p>因为跨域问题是浏览器对于ajax请求的一种安全限制：一个页面发起的ajax请求只能是当前页同域名的路径，有效的阻止跨站攻击。</p>
+<p>因此：跨域问题是针对ajax的一种限制。        </p>
+<p>解决跨域的方案</p>
+<p>jsonp</p>
+<p>最早的解决方案，用script标签可以跨域的原理实现</p>
+<p>限制：</p>
+<p>需要服务的支持</p>
+<p>只能发起get请求</p>
+<p>nginx反向代理</p>
+<p>利用nginx反向代理把跨域为不跨域，支持各种请求方式</p>
+<p>缺点：需要在nginx进行额外配置，语义不清晰</p>
+<p>cors</p>
+<p>规范化的跨域请求解决方案，安全可靠</p>
+<h3 id="什么是CORS"><a href="#什么是CORS" class="headerlink" title="什么是CORS"></a>什么是CORS</h3><p>是一个w3c标准，全程全域资源共享</p>
+<p><strong>实现原理：</strong></p>
+<p> 浏览器会将ajax请求分为两类：简单请求，特殊请求</p>
+<p>简单请求</p>
+<p>HEAD</p>
+<p>GET</p>
+<p>POST</p>
+<p>特殊请求</p>
+<p>PUT</p>
+<p>DELETE</p>
+<h3 id="跨域问题解决方案一："><a href="#跨域问题解决方案一：" class="headerlink" title="跨域问题解决方案一："></a>跨域问题解决方案一：</h3><p>​        只需要在controller上添加注解@CrossOrigin注解即可</p>
+<p>缺点：需要在每个控制器上加注解，不推荐这种方式。</p>
+<h3 id="跨域方案解决方案二："><a href="#跨域方案解决方案二：" class="headerlink" title="跨域方案解决方案二："></a>跨域方案解决方案二：</h3><p>springCloudGateway</p>
+<p>在官方文档中将application.yml中配置一下就可以解决跨域问题：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">spring</span><br><span class="line">    cloud:</span><br><span class="line">        gateway:</span><br><span class="line">          globalcors:</span><br><span class="line">            add-to-simple-url-handler-mapping: true</span><br><span class="line">            corsConfigurations:</span><br><span class="line">              &#39;[&#x2F;**]&#39;:</span><br><span class="line">                allowedOrigins:</span><br><span class="line">                  - &quot;http:&#x2F;&#x2F;manage.leyou.com&quot;</span><br><span class="line">                allowedHeaders:</span><br><span class="line">                  - &quot;*&quot;</span><br><span class="line">                allowCredentials: true</span><br><span class="line">                maxAge: 360000</span><br><span class="line">                allowedMethods:</span><br><span class="line">                  - GET</span><br><span class="line">                  - POST</span><br><span class="line">                  - DELETE</span><br><span class="line">                  - PUT</span><br><span class="line">                  - OPTIONS</span><br><span class="line">                  - HEAD</span><br><span class="line">      routes:</span><br><span class="line">        # 路由id,可以随意写</span><br><span class="line">        - id: item-service</span><br><span class="line">          # 代理的服务地址；lb表示负载均衡(从eureka中获取具体服务)</span><br><span class="line">          uri: lb:&#x2F;&#x2F;item-service</span><br><span class="line">          # 路由断言，可以配置映射路径</span><br><span class="line">          predicates:</span><br><span class="line">            - Path&#x3D;&#x2F;api&#x2F;item&#x2F;**</span><br><span class="line">          filters:</span><br><span class="line">            # 表示过滤1个路径，2表示两个路径，以此类推</span><br><span class="line">            - StripPrefix&#x3D;2</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 
             </div>
             <hr/>
@@ -496,7 +540,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://yoursite.com/2020/06/10/hello-world/">http://yoursite.com/2020/06/10/hello-world/</a>
+                    <a href="http://yoursite.com/2020/06/04/%E8%B7%A8%E5%9F%9F/">http://yoursite.com/2020/06/04/%E8%B7%A8%E5%9F%9F/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -533,7 +577,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
+                            
+                                <a href="/tags/%E8%B7%A8%E5%9F%9F/">
+                                    <span class="chip bg-color">跨域</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -703,24 +751,33 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2020/06/10/index/">
+                <a href="/2020/06/04/Quarts%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6%E6%A1%86%E6%9E%B6/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="技术分享">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="Quarts任务调度框架">
                         
-                        <span class="card-title">技术分享</span>
+                        <span class="card-title">Quarts任务调度框架</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            Quarts：任务定时调度框架
+是一个完全由java编写的开源任务调度框架，通过触发器设置作业定时运行规则，控制作业的运行时间。
+spring整合quarts任务定时调度框架
+
+导入依赖包
+
+创建任务类
+
+spring整合配置文件
+1234
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-10
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-04
                         </span>
                         <span class="publish-author">
                             
@@ -731,33 +788,52 @@
                     </div>
                 </div>
                 
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/quarts/">
+                        <span class="chip bg-color">quarts</span>
+                    </a>
+                    
+                </div>
+                
             </div>
         </div>
         
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                Current&nbsp;<i class="far fa-dot-circle"></i>
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/06/10/hello-world/">
+                <a href="/2020/06/04/%E9%A1%B9%E7%9B%AE%E4%B8%AD%E4%BD%BF%E7%94%A8nginx/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="项目中使用nginx">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">项目中使用nginx</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                            解析域名服务因为在实际开发中会有不同的环境
+
+开发环境：自己的电脑
+
+测试环境：提供给测试人员使用的环境
+
+预发布环境：数据和生产环境的数据一致，运行最新的项目代码进去测试
+
+生产环境：项目最终发布上线的环境
+
+
+不同的环境使用不同的ip会
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-10
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-04
                             </span>
                         <span class="publish-author">
                             
@@ -767,7 +843,14 @@
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/nginx/">
+                        <span class="chip bg-color">nginx</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
